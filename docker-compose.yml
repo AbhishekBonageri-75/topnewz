@@ -1,0 +1,115 @@
+version: "3.6"
+
+services:
+  eureka:
+    container_name: eureka_server
+    image: eureka_server
+    build: ./eureka_server/
+    networks: 
+      topnewz_network:
+    ports:
+      - 8761:8761
+    environment: 
+      EUREKA_PORT: 8761
+  
+  gatewayservice:
+    container_name: topnewz_gatewayservice
+    image: topnewz_gatewayservice
+    build: ./gatewayservice/
+    networks:
+      topnewz_network: 
+    ports: 
+      - 9000:9000
+    environment:
+      EUREKA_HOST: eureka
+      EUREKA_PORT: 8761
+      USER_HOST: userservice
+      USER_PORT: 8090
+      FAV_HOST: favoriteservice
+      FAV_PORT: 8082
+      SEARCH_HOST: searchservice
+      SEARCH_PORT: 8085
+    restart: on-failure
+    depends_on:
+      - eureka
+
+  mongodb:
+    image: mongo
+    container_name: topnewz_mongodb
+    networks:
+      topnewz_network:
+
+  favoriteservice:
+    image: topnewz_favoriteservice
+    container_name: topnewz_favoriteservice
+    build: ./favoriteservice/
+    networks:
+      topnewz_network:
+    ports:
+      - 8082:8082
+    environment:
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+      EUREKA_HOST: eureka
+      EUREKA_PORT: 8761
+    restart: on-failure
+    depends_on:
+      - mongodb
+      - eureka
+
+  topnewz_webapp: 
+    container_name: topnewz_webapp
+    image: topnewz_webapp
+    build: ./webapp/
+    networks: 
+      topnewz_network: 
+    ports: 
+      - 3000:3000
+
+  mysqldb:
+    container_name: topnewz_mysqldb
+    image: mysql:8.0
+    networks:
+      topnewz_network:
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: users
+
+  userservice:
+    container_name: topnewz_userservice
+    image: topnewz_userservice
+    build: ./userservice/
+    networks:
+      topnewz_network:
+    ports:
+      - 8090:8090
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: root
+      MYSQl_PASSWORD: root
+      EUREKA_HOST: eureka
+      EUREKA_PORT: 8761
+    restart: on-failure
+    depends_on:
+      - mysqldb
+      - eureka
+
+  searchservice:
+    container_name: topnewz_searchservice
+    image: topnewz_searchservice
+    build: ./searchservice/
+    networks:
+      topnewz_network:
+    ports:
+      - 8085:8085
+    environment:
+      EUREKA_HOST: eureka
+      EUREKA_PORT: 8761
+    restart: on-failure
+    depends_on:
+      - eureka
+
+networks:
+  topnewz_network:
+
