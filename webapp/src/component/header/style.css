@@ -1,0 +1,46 @@
+.navbar-custom {
+    background-color: #d54a11;
+    min-height: 60px;
+    padding: 0 1.2em;
+}
+.brand-img{
+    width: 30%;
+    float: left;
+}
+.brand-txt{
+    color: wheat;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: 400;
+    width: 70%;
+    float: right;
+    padding-right: .8em;
+}
+.nav-btn{
+    border-color: wheat;
+    color: white;
+}
+.nav-btn:hover{
+    background-color: wheat;
+}
+.navbar-custom>.nav-link{
+    font-size: larger;
+}
+.nav-link, .nav-link:hover{
+    color: white;
+}
+.base-nav{
+    background-color: #1a2235;
+}
+
+#user-txt{
+    color: white;
+    margin-top: .6em;
+    font-size: 1.2em;
+}
+.dropdown-menu{
+    right: 0;
+}
+.dropdown-menu>hr{
+    width: 100%;
+}

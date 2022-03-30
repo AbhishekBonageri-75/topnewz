@@ -1,0 +1,31 @@
+.card-prop1 {
+  max-width: 100%;
+  background-color: #1a2235;
+  height: 850px;
+}
+
+.icon-prop {
+  margin-top: 200px;
+  color: white;
+}
+
+.icon-color {
+  color: white;
+}
+
+.form-pr {
+  height: 700px;
+  margin-left: 20%;
+}
+
+.message-prop {
+  font-size: 17px;
+  color: red;
+  margin-right: 75%;
+}
+
+.message-prop1 {
+  font-size: 17px;
+  color: red;
+  margin-right: 74%;
+}

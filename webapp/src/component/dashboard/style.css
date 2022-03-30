@@ -1,0 +1,17 @@
+.dashboard{
+    padding: 2%;
+}
+.page-item{
+    margin-left: 0;
+}
+.pagination{
+    margin-right: 2%;
+    padding-bottom: 2%;
+}
+.page-link:hover{
+    cursor: pointer;
+}
+.parent{
+    min-height: 100vh;
+    background-color: #1a2235;
+}

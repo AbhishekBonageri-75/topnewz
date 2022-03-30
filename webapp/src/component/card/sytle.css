@@ -1,0 +1,21 @@
+.news-favorite{
+    width: 10%;
+    float: right;
+    padding: .3em;
+    line-height: 1em;
+}
+.news-title{
+    width: 90%;
+    float: left;
+    padding: .5em;
+    line-height: 1em;
+}
+.news-image{
+    padding: .5em;
+    max-height: 200px;
+    border-radius: 5px;
+}
+.news-body{
+	padding: .5em;
+	width: 100%;
+}

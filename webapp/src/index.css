@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.invalid-credentials {
+  color: red;
+}
+
+.link-color {
+  color: white;
+  margin-right: 20px;
+}
+
+.link-color:hover {
+  color: white;
+}
+
+#login-padding {
+  padding-right: 30px;
+}
+
+.form-position {
+  margin-left: 150px;
+}
+
+.bg-color {
+  background-color: #1a2235;
+}
+
+.form-prop {
+  height: 600px;
+}
+
+.button-color {
+  background-color: #d54a11;
+  border-radius: 10px;
+  font-size: 30px;
+  width: 150px;
+}
+
+.navbar-prop {
+  background-color: #ff8c00;
+}
+
+.title-text {
+  color: white;
+}
